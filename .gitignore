@@ -1,0 +1,13 @@
+# Secrets and environment variables
+.env
+.env.local
+.env*.local
+
+# Vercel
+.vercel/
+
+# Backup files
+*.bak*
+
+# OS
+.DS_Store

@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TalPlay is a strategy and applied economics consultancy specializing in Indigenous community development, blue economy sector-building, and economic recovery, in BC, Canada, and internationally.">
+<meta property="og:title" content="TalPlay | Strategy & Applied Economics">
+<meta property="og:description" content="Where First Nations futures, blue economy frontier, and regional growth strategy converge.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://talplay.ca/">
+<meta property="og:image" content="https://talplay.ca/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TalPlay | Strategy & Applied Economics">
+<meta property="og:site_name" content="TalPlay">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TalPlay | Strategy & Applied Economics">
+<meta name="twitter:description" content="Where First Nations futures, blue economy frontier, and regional growth strategy converge.">
+<meta name="twitter:image" content="https://talplay.ca/og.png">
+<link rel="canonical" href="https://talplay.ca/">
+<meta name="theme-color" content="#0e2a29">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>TalPlay | Strategy & Applied Economics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #081513;
+    --marine: #0E2A29;
+    --deep: #123733;
+    --paper: #EFF1EC;
+    --paper-soft: #E4E7DF;
+    --stone: #ECEEE8;
+    --muted: #9AAAA3;
+    --field: #D5DDD2;
+    --copper: #A85F38;
+    --gold: #C58A2E;
+    --blue: #6E9BB0;
+    --line: rgba(236,238,232,.18);
+    --paper-line: rgba(14,42,41,.18);
+    --serif: "Fraunces", Georgia, serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --termH: 30px;
+    --hdrH: 68px;
+  }
+
+  * { box-sizing: border-box }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--termH) + var(--hdrH) + 24px);
+  }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--stone);
+    font-family: var(--serif);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    pointer-events: none;
+    opacity: .04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: var(--gold); color: #211706 }
+
+  a { color: inherit }
+  p { margin: 0 }
+
+  .skip-link {
+    position: fixed;
+    top: 8px; left: 8px;
+    z-index: 300;
+    transform: translateY(-140%);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .skip-link:focus { transform: none }
+
+  /* ── Terminal bar ── */
+  .term {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 120;
+    height: var(--termH);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 18px;
+    background: #020303;
+    color: #6f8880;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .04em;
+  }
+  .term strong { font-weight: 500; color: var(--gold) }
+  .cursor {
+    display: inline-block;
+    width: 7px; height: 13px;
+    background: var(--gold);
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0 } }
+
+  /* ── Header ── */
+  .site-header {
+    position: fixed;
+    top: var(--termH);
+    left: 0; right: 0;
+    z-index: 110;
+    min-height: var(--hdrH);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px clamp(22px, 5vw, 70px);
+    background: linear-gradient(180deg, rgba(8,21,19,.96), rgba(8,21,19,.72));
+    border-bottom: 1px solid rgba(236,238,232,.07);
+    backdrop-filter: blur(10px);
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.48rem;
+    font-weight: 500;
+    letter-spacing: .01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .mark-symbol { width: 26px; height: 26px; flex-shrink: 0 }
+  .mark b { color: var(--gold); font-weight: 500 }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2.2vw, 32px);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .nav a {
+    color: rgba(236,238,232,.7);
+    text-decoration: none;
+    padding: 7px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .nav a:hover, .nav a:focus-visible { color: var(--stone); border-color: var(--gold) }
+  .nav .nav-cta { color: var(--stone); border-color: var(--gold) }
+
+  /* ── Section base ── */
+  .section {
+    position: relative;
+    scroll-margin-top: calc(var(--termH) + var(--hdrH) + 24px);
+    padding: clamp(86px, 12vw, 150px) clamp(22px, 7vw, 96px);
+    overflow: hidden;
+  }
+  .section:first-of-type {
+    padding-top: calc(var(--termH) + var(--hdrH) + clamp(54px, 9vw, 100px));
+  }
+
+  .section--marine { background: radial-gradient(110% 95% at 78% 0%, #16443e 0%, var(--marine) 46%, var(--ink) 100%) }
+  .section--ink    { background: linear-gradient(145deg, #0a1816 0%, #102d2a 48%, #07100f 100%) }
+  .section--paper  { background: linear-gradient(180deg, var(--paper), var(--paper-soft)); color: var(--marine) }
+  .section--quiet  { background: #0b1715; padding-top: clamp(56px, 7vw, 110px); padding-bottom: clamp(56px, 7vw, 110px) }
+  .section--dark   { background: #060e0d }
+
+  .inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0,1.05fr) minmax(280px,.95fr);
+    gap: clamp(42px, 7vw, 94px);
+    align-items: center;
+  }
+  .grid--top { align-items: start }
+
+  /* ── Typography ── */
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { display: none }
+  .eyebrow--center { justify-content: center }
+  /* Hero typography hierarchy: main title > subtitle > lead > labels */
+  .hero-title {
+    max-width: none;
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .hero-subtitle {
+    max-width: 24ch;
+    margin-top: 22px;
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    line-height: 1.18;
+    color: var(--stone);
+  }
+  .eyebrow--center::before { display: none }
+  .section--paper .eyebrow { color: #8B611C }
+
+  h1, h2, h3, h4 { margin: 0; font-weight: 400; letter-spacing: 0 }
+  h1 {
+    max-width: 11ch;
+    font-size: clamp(3rem, 7.7vw, 7rem);
+    line-height: .98;
+  }
+  h2 {
+    max-width: 16ch;
+    font-size: clamp(2.15rem, 5vw, 4.8rem);
+    line-height: 1.04;
+  }
+  h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.14 }
+
+  .gold   { color: var(--gold) }
+  .copper { color: var(--copper) }
+
+  .lead {
+    max-width: 58ch;
+    margin-top: 28px;
+    color: var(--field);
+    font-family: var(--mono);
+    font-size: clamp(.86rem, 1.15vw, .98rem);
+    line-height: 1.75;
+    letter-spacing: .01em;
+  }
+  .section--paper .lead { color: #42534d }
+
+  .plain {
+    color: rgba(236,238,232,.76);
+    font-family: var(--mono);
+    font-size: .86rem;
+    line-height: 1.8;
+  }
+  .section--paper .plain { color: #4f625b }
+
+  /* ── Buttons ── */
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 38px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 24px;
+    border: 1px solid rgba(236,238,232,.34);
+    color: var(--stone);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .25s, color .25s, border-color .25s;
+  }
+  .button:hover, .button:focus-visible {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #241a08;
+  }
+  .button--ghost {
+    border-color: transparent;
+    color: var(--muted);
+    padding-left: 0; padding-right: 0;
+  }
+  .button--ghost:hover, .button--ghost:focus-visible {
+    background: transparent;
+    color: var(--stone);
+    border-color: transparent;
+  }
+  .section--paper .button { color: var(--marine); border-color: rgba(14,42,41,.3) }
+  .section--paper .button:hover, .section--paper .button:focus-visible {
+    background: var(--marine); border-color: var(--marine); color: var(--stone);
+  }
+
+  /* ── Hero proof strip ── */
+  .proof-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: clamp(48px, 8vw, 88px);
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .proof-item {
+    min-height: 118px;
+    padding: 22px;
+    background: rgba(8,21,19,.54);
+  }
+  .proof-item b {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--stone);
+    font-size: clamp(1.4rem, 2.5vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1;
+  }
+  .proof-item span {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* ── Hero field map ── */
+  .field-map {
+    position: relative;
+    min-height: 520px;
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    background:
+      linear-gradient(rgba(236,238,232,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(236,238,232,.055) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+  .field-map canvas { position: absolute; inset: 0; width: 100%; height: 100% }
+  .map-label {
+    position: absolute;
+    max-width: 170px;
+    color: rgba(236,238,232,.78);
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.55;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .map-label.one   { top: 12%;  left: 8%;  color: var(--copper) }
+  .map-label.two   { right: 7%; top: 29%;  color: var(--blue) }
+  .map-label.three { left: 18%; bottom: 11% }
+  .map-label.four  { right: 12%; bottom: 19%; color: var(--gold) }
+  .map-label.five  { left: 42%; top: 46%; color: var(--blue) }
+
+  /* ── Practice manifesto ── */
+  .manifesto {
+    max-width: 720px;
+    margin: 0;
+    text-align: left;
+  }
+  .manifesto-text {
+    font-family: var(--mono);
+    font-size: clamp(1.05rem, 2.1vw, 1.6rem);
+    line-height: 1.7;
+    color: var(--stone);
+    font-weight: 400;
+    letter-spacing: 0;
+    font-style: normal;
+    margin-top: 20px;
+  }
+  .manifesto-text em { font-style: normal; color: var(--gold) }
+  .manifesto .eyebrow {
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .manifesto .eyebrow::before { display: none }
+
+  /* ── Domains ── */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 56px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .domain {
+    padding: 36px 30px 40px;
+    background: rgba(8,21,19,.6);
+    transition: background .3s;
+  }
+  .domain:hover { background: rgba(13,30,28,.82) }
+
+  .domain-num {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    color: var(--muted);
+  }
+
+  .domain-name {
+    font-size: clamp(1.28rem, 2vw, 1.75rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .domain--indigenous .domain-name { color: var(--copper) }
+  .domain--blue       .domain-name { color: var(--blue) }
+  .domain--global     .domain-name { color: var(--gold) }
+
+  .domain-desc {
+    color: rgba(236,238,232,.7);
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.78;
+    margin-bottom: 28px;
+  }
+
+  .domain-caps {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .domain-caps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: .78rem;
+    line-height: 1.6;
+    letter-spacing: .03em;
+  }
+  .domain-caps li::before { content: "→"; flex-shrink: 0; margin-top: 1px }
+  .domain--indigenous .domain-caps li::before { color: var(--copper) }
+  .domain--blue       .domain-caps li::before { color: var(--blue) }
+  .domain--global     .domain-caps li::before { color: var(--gold) }
+
+  /* ── Selected Work ── */
+  .work-list {
+    display: grid;
+    gap: 1px;
+    margin-top: 56px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 56px 1fr 1fr;
+    gap: 32px;
+    padding: 36px 32px;
+    background: rgba(8,21,19,.58);
+    transition: background .25s;
+  }
+  .work-item:hover { background: rgba(13,30,28,.76) }
+
+  .work-num {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    padding-top: 4px;
+  }
+
+  .work-sector {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 5px 10px;
+    border: 1px solid;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .work-sector--indigenous  { color: var(--copper); border-color: rgba(168,95,56,.4) }
+  .work-sector--blue        { color: var(--blue);   border-color: rgba(110,155,176,.4) }
+  .work-sector--global      { color: var(--gold);   border-color: rgba(197,138,46,.4) }
+  .work-sector--innovation  { color: var(--muted);  border-color: rgba(154,170,163,.3) }
+
+  .work-title {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .work-context {
+    color: rgba(236,238,232,.66);
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.75;
+  }
+
+  .work-output-label {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--gold);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .work-outputs {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .work-outputs li {
+    color: var(--field);
+    font-family: var(--mono);
+    font-size: .8rem;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+  .work-outputs li::before {
+    content: "\00B7";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+  }
+
+  /* ── Insights ── */
+  .insights-list {
+    display: grid;
+    gap: 1px;
+    margin-top: 48px;
+    background: var(--paper-line);
+    border: 1px solid var(--paper-line);
+  }
+
+  .insight-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 28px;
+    background: rgba(255,255,255,.32);
+    transition: background .25s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .insight-item:hover { background: rgba(255,255,255,.46) }
+
+  .insight-type {
+    color: #8B611C;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+
+  .insight-title {
+    display: block;
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 1.2;
+    color: var(--marine);
+    margin-bottom: 10px;
+  }
+
+  .insight-desc {
+    color: #50625b;
+    font-family: var(--mono);
+    font-size: .8rem;
+    line-height: 1.72;
+  }
+
+  /* ── Track Record ── */
+  .record-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(48px, 8vw, 110px);
+    align-items: start;
+  }
+
+  .record-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--paper-line);
+    border: 1px solid var(--paper-line);
+    margin-bottom: 36px;
+  }
+  .record-stat {
+    padding: 22px;
+    background: rgba(255,255,255,.3);
+  }
+  .record-stat b {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--marine);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1;
+  }
+  .record-stat span {
+    color: #62756d;
+    font-family: var(--mono);
+    font-size: .78rem;
+    line-height: 1.55;
+    letter-spacing: .04em;
+  }
+
+  .client-logos-label {
+    color: #8a9e98;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--paper-line);
+    border: 1px solid var(--paper-line);
+  }
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 12px 14px;
+    background: rgba(255,255,255,.25);
+    color: #6d807a;
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .06em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .record-detail-list {
+    display: grid;
+    gap: 1px;
+    background: var(--paper-line);
+    border: 1px solid var(--paper-line);
+  }
+  .record-detail-item {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 24px;
+    padding: 24px;
+    background: rgba(255,255,255,.3);
+  }
+  .record-detail-item b {
+    color: var(--marine);
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .record-detail-item span {
+    color: #50625b;
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.75;
+  }
+
+  /* ── Approach ── */
+  .approach-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 7vw, 90px);
+    align-items: start;
+    margin-bottom: 56px;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .principle {
+    padding: 32px;
+    background: rgba(8,21,19,.5);
+  }
+  .principle .num {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--gold);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+  }
+  .principle h3 { max-width: 16ch; margin-bottom: 16px }
+
+  /* ── Contact ── */
+  .closing { text-align: center }
+  .closing h2 { max-width: 14ch; margin: 0 auto }
+  .closing .lead { margin-left: auto; margin-right: auto }
+
+  .conversation-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 34px auto 0;
+  }
+  .conversation-types span {
+    border: 1px solid rgba(236,238,232,.2);
+    padding: 9px 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  /* ── Footer ── */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px clamp(22px, 7vw, 96px);
+    background: #020303;
+    color: #6f8880;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  footer a { color: #8fa49d; text-decoration: none }
+  footer a:hover { color: var(--gold) }
+
+  /* ── Reveal animation ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: none }
+
+  .nav-toggle { display: none }
+
+  /* Unified type scale: one size for every title, one for every subtitle */
+  h2, h3, .domain-name, .work-title, .insight-title {
+    font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+  }
+  h2 { max-width: none }
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .site-header { align-items: flex-start }
+    .nav { justify-content: flex-end; flex-wrap: wrap; gap: 10px 18px }
+    .grid { grid-template-columns: 1fr }
+    .field-map { min-height: 420px }
+    .proof-strip { grid-template-columns: 1fr 1fr }
+    .domain-grid { grid-template-columns: 1fr 1fr }
+    .work-item { grid-template-columns: 40px 1fr; }
+    .work-item > div:last-child { grid-column: 2 }
+    .record-grid { grid-template-columns: 1fr }
+    .approach-intro { grid-template-columns: 1fr }
+    .principles { grid-template-columns: 1fr 1fr }
+  }
+
+  @media (max-width: 640px) {
+    :root { --hdrH: 88px }
+    .term { padding: 0 12px; font-size: 10px }
+    .site-header { padding: 12px 20px }
+    .nav-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 1px solid rgba(236,238,232,.28);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .nav-toggle__bar {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--stone);
+      transition: transform .2s, opacity .2s;
+    }
+    .site-header.nav-open .nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg) }
+    .site-header.nav-open .nav-toggle__bar:nth-child(2) { opacity: 0 }
+    .site-header.nav-open .nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg) }
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: #020303;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 20px 16px;
+    }
+    .site-header.nav-open .nav { display: flex }
+    .nav a { padding: 14px 4px; font-size: 12px }
+    .nav a:not(.nav-cta) { display: block }
+    .nav .nav-cta { margin-top: 12px; text-align: center }
+    .section { padding-left: 22px; padding-right: 22px }
+    .hero-title { font-size: clamp(1.5rem, 6vw, 2rem); max-width: 12ch }
+    .hero-subtitle { font-size: clamp(1.15rem, 4.8vw, 1.6rem) }
+    .proof-strip, .domain-grid, .principles { grid-template-columns: 1fr }
+    .proof-item { min-height: auto }
+    .work-item { grid-template-columns: 1fr; gap: 20px }
+    .work-num { display: none }
+    .record-stats { grid-template-columns: 1fr 1fr }
+    .logo-grid { grid-template-columns: 1fr 1fr }
+    .record-detail-item { grid-template-columns: 1fr; gap: 10px }
+    .insight-item { grid-template-columns: 1fr; gap: 10px }
+    .insight-type { padding-top: 0 }
+    footer { display: block }
+    footer span { display: block; margin-top: 8px }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto }
+    .cursor { animation: none }
+    .reveal { opacity: 1; transform: none; transition: none }
+  }
+
+  .mark{gap:7px}
+  .mark-word{white-space:nowrap}
+  /* Moving marquee */
+  .marquee{position:relative;overflow:hidden;background:#0b1715;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+  .marquee__track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+  .marquee__item{display:inline-flex;align-items:baseline;gap:10px;padding:0 clamp(20px,3vw,38px);white-space:nowrap;border-right:1px solid rgba(197,138,46,.16)}
+  .marquee__item b{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.55rem);font-weight:500;color:var(--gold);line-height:1}
+  .marquee__item span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .marquee:hover .marquee__track{animation-play-state:paused}
+  @media (prefers-reduced-motion:reduce){.marquee__track{animation:none;flex-wrap:wrap;gap:8px 0}}
+  /* Currently / desk faces the Pacific */
+  .now-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(40px,7vw,80px);align-items:center}
+  .now-term{border:1px solid var(--line);background:#0a1614;font-family:var(--mono);font-size:.82rem;line-height:1.95;color:var(--field);padding:26px 24px;border-radius:2px}
+  .now-term .tprompt{color:var(--gold)}
+  .now-term .tline{display:block;white-space:nowrap}
+  @media (max-width:960px){.now-grid{grid-template-columns:1fr}}
+  /* About (personal) */
+  .about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(40px,7vw,90px);align-items:start}
+  .about-statement{font-size:clamp(1.45rem,3vw,2.35rem);line-height:1.3;font-weight:300;font-style:italic;color:var(--stone);letter-spacing:-.01em}
+  .about-statement em{font-style:normal;color:var(--gold)}
+  .about-body{margin-top:26px;display:grid;gap:20px}
+  .about-heritage{margin-top:28px;padding:22px 26px;border-left:2px solid var(--gold);background:rgba(197,138,46,.06)}
+  .about-facts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .about-fact{padding:20px 22px;background:rgba(8,21,19,.5)}
+  .about-fact b{display:block;color:var(--stone);font-size:1.12rem;font-weight:400;margin-bottom:6px}
+  .about-fact span{color:var(--muted);font-family:var(--mono);font-size:.8rem;line-height:1.6}
+
+  .about-photo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .about-photo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid rgba(197, 138, 46, .45);
+    box-shadow: 0 8px 36px rgba(0, 0, 0, .45);
+    display: block;
+  }
+  @media (max-width: 960px) {
+    .about-photo {
+      justify-content: flex-start;
+    }
+    .about-photo img {
+      max-width: 240px;
+    }
+  }
+  @media (max-width: 640px) {
+    .about-photo img {
+      max-width: 180px;
+    }
+  }
+
+  /* Legacy projects (paper) */
+  .legacy-head{margin-top:clamp(58px,8vw,92px)}
+  .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:34px;background:var(--paper-line);border:1px solid var(--paper-line)}
+  .legacy-card{padding:26px 24px;background:rgba(255,255,255,.3)}
+  .legacy-era{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8B611C;margin-bottom:14px}
+  .legacy-name{font-size:1.18rem;line-height:1.16;color:var(--marine);margin-bottom:12px}
+  .legacy-desc{color:#50625b;font-family:var(--mono);font-size:.8rem;line-height:1.7}
+  .legacy-metric{margin-top:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:#8B611C;text-transform:uppercase}
+  @media (max-width:960px){.about-grid{grid-template-columns:1fr}.legacy-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.legacy-grid{grid-template-columns:1fr}}
+
+  /* ── Write to me ── */
+  .write-section { background: var(--paper); color: var(--ink) }
+  .write-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+  .write-intro h2 {
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .write-intro p {
+    max-width: 46ch;
+    color: #42534d;
+    font-family: var(--mono);
+    font-size: .86rem;
+    line-height: 1.8;
+  }
+  .write-form { width: 100% }
+  .write-field { margin-bottom: 20px }
+  .write-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8b611c;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .write-field label .opt {
+    color: #6b7a73;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .write-field input,
+  .write-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid rgba(14, 42, 41, .18);
+    border-radius: 2px;
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: .92rem;
+    line-height: 1.5;
+    transition: border-color .2s;
+  }
+  .write-field input::placeholder,
+  .write-field textarea::placeholder { color: #8a9e98 }
+  .write-field input:focus,
+  .write-field textarea:focus {
+    border-color: var(--copper);
+    outline: none;
+  }
+  .write-field textarea { min-height: 150px; resize: vertical }
+  .write-field input.is-error,
+  .write-field textarea.is-error { border-color: #c0392b }
+  .write-field__error {
+    margin-top: 6px;
+    color: #c0392b;
+    font-family: var(--mono);
+    font-size: .74rem;
+    line-height: 1.5;
+  }
+  .write-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 32px;
+    background: var(--copper);
+    border: 1px solid var(--copper);
+    border-radius: 2px;
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s, border-color .25s;
+  }
+  .write-submit:hover { background: #7a4528; border-color: #7a4528 }
+  .write-submit:disabled { opacity: .55; cursor: wait }
+  .write-foot {
+    margin-top: 16px;
+    color: #6b7a73;
+    font-family: var(--mono);
+    font-size: .7rem;
+    line-height: 1.6;
+  }
+  .write-status {
+    margin-top: 14px;
+    color: #c0392b;
+    font-family: var(--mono);
+    font-size: .78rem;
+    line-height: 1.6;
+  }
+  .write-success {
+    border: 1px solid rgba(14, 42, 41, .18);
+    background: #fff;
+    padding: 44px 28px;
+    text-align: center;
+  }
+  .write-success .ok {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 24px;
+  }
+  .write-success h3 {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .write-success p {
+    color: #42534d;
+    font-family: var(--mono);
+    font-size: .85rem;
+    line-height: 1.7;
+  }
+  @media (max-width: 760px) {
+    .write-grid { grid-template-columns: 1fr }
+  }
+
+  .write-intro p + p {
+    margin-top: 16px;
+  }
+
+  .contact-tags {
+    margin-top: 28px;
+    color: #8a9e98;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    line-height: 1.9;
+  }
+
+  .scroll-anchor {
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Terminal bar -->
+<div class="term" aria-hidden="true">
+  <strong>talplay:~$</strong>
+  <span id="status">reading the economic system</span>
+  <span class="cursor"></span>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="site-header">
+  <a class="mark" href="#top" aria-label="TalPlay home">
+    <svg class="mark-symbol" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="2" y1="15" x2="24" y2="15" stroke="#C58A2E" stroke-opacity=".65" stroke-width="1"/>
+      <polyline points="5,21 13,8 21,21" stroke="#ECEEE8" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="13" cy="8" r="2.2" fill="#C58A2E"/>
+    </svg>
+    <span class="mark-word">Tal<b>Play</b></span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+    <a href="#about">About</a>
+    <a href="#domains">Domains</a>
+    <a href="#work">Work</a>
+    <a href="#insights">Insights</a>
+    <a href="#approach">Approach</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="section section--marine" id="top" aria-labelledby="hero-title">
+    <div class="inner">
+      <div class="grid">
+        <div class="reveal">
+          <h1 id="hero-title" class="hero-title">Strategy &amp; applied economics</h1>
+          <p class="hero-subtitle">Complex challenges need <span class="gold">clear paths.</span></p>
+          <p class="lead">TalPlay works where economic ambition, Indigenous community priorities, and frontier sectors meet: in BC, across Canada, and in complex international contexts where standard approaches fall short.</p>
+          <div class="actions">
+            <a class="button" href="#write">Start a conversation</a>
+            <a class="button button--ghost" href="#about">Meet the builder</a>
+          </div>
+        </div>
+        <div class="field-map reveal" role="img" aria-label="Abstract map of connected economic systems, priorities, and technology">
+          <canvas id="systems-map"></canvas>
+          <span class="map-label one">First Nations priorities</span>
+          <span class="map-label two">Seaweed</span>
+          <span class="map-label three">Community systems</span>
+          <span class="map-label four">Regional growth paths</span>
+          <span class="map-label five">Technology</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVING MARQUEE -->
+  <div class="marquee" role="img" aria-label="TalPlay at a glance: 25+ years of applied economics, 8 international agencies including 2 UN, $36M+ in programs delivered, 10+ countries, a 20-year community owned model, First Nations community planning, seaweed sector strategy">
+    <div class="marquee__track" aria-hidden="true">
+      <span class="marquee__item"><b>25+</b><span>Years of applied economics</span></span>
+      <span class="marquee__item"><b>8</b><span>International agencies &middot; 2 UN</span></span>
+      <span class="marquee__item"><b>$36M+</b><span>In programs delivered</span></span>
+      <span class="marquee__item"><b>10+</b><span>Countries &amp; complex contexts</span></span>
+      <span class="marquee__item"><b>20 yrs</b><span>A community owned model, still running</span></span>
+      <span class="marquee__item"><b>100%</b><span>Community ownership</span></span>
+      <span class="marquee__item"><b>First Nations</b><span>Community &amp; economic planning</span></span>
+      <span class="marquee__item"><b>Seaweed</b><span>Sector strategy &amp; market evidence</span></span>
+      <span class="marquee__item"><b>25+</b><span>Years of applied economics</span></span>
+      <span class="marquee__item"><b>8</b><span>International agencies &middot; 2 UN</span></span>
+      <span class="marquee__item"><b>$36M+</b><span>In programs delivered</span></span>
+      <span class="marquee__item"><b>10+</b><span>Countries &amp; complex contexts</span></span>
+      <span class="marquee__item"><b>20 yrs</b><span>A community owned model, still running</span></span>
+      <span class="marquee__item"><b>100%</b><span>Community ownership</span></span>
+      <span class="marquee__item"><b>First Nations</b><span>Community &amp; economic planning</span></span>
+      <span class="marquee__item"><b>Seaweed</b><span>Sector strategy &amp; market evidence</span></span>
+    </div>
+  </div>
+
+  <!-- PRACTICE MANIFESTO (the story) -->
+  <section class="section section--quiet" aria-label="TalPlay practice statement">
+    <div class="inner">
+      <div class="manifesto reveal">
+        <div class="eyebrow">The practice</div>
+        <p class="manifesto-text">
+          We carried one idea into a single community. It was a small idea, and honestly, it was enough. The people there took it and made it theirs, and it crossed borders on its own: Jordan, Lebanon, Yemen, Morocco. Twenty years later it's still running, and they own it entirely. That's what we build: work that communities <em>make their own</em>, that puts people in the driver's seat and outlasts the consultant who helped start it. The proof that money is not everything is a program that <em>no longer needs you</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (first-person, the builder) -->
+  <section class="section section--marine" id="about" aria-labelledby="about-title">
+    <div class="inner">
+      <div class="reveal" style="margin-bottom:48px">
+        <div class="eyebrow">The person behind the practice</div>
+        <h2 id="about-title">I build things that hold.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="about-statement">I'm Naser. For 25 years, I've designed and delivered programs that had every reason to fail, yet I've watched them last. TalPlay is where that experience works for you now.</p>
+          <div class="about-body">
+            <p class="plain">I sit at an unusual intersection: economics, the environment, and technology. It keeps the research grounded in what happens on the ground, and it means that, at the end of the thinking, something exists. A plan. A curriculum. A facility. A map. A product. Something that still works when I'm not in the room.</p>
+          </div>
+          <div class="about-heritage reveal">
+            <p class="plain">I've worked in communities and countries where development work stops being an abstraction. You know what a good program feels like from the receiving end and what a careless one costs.</p>
+            <p class="plain">That perspective has followed me into every context I've worked in. It's with me now, on this coast, in this work.</p>
+            <p class="plain">Based in BC. Working across Canada and internationally.</p>
+          </div>
+        </div>
+        <div class="about-photo reveal">
+          <img src="IMG_3003.png" alt="Naser, founder of TalPlay" width="300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENTLY -->
+  <section class="section section--dark" id="now" aria-labelledby="now-title">
+    <div class="inner now-grid">
+      <div class="reveal">
+        <div class="eyebrow">Currently</div>
+        <h2 id="now-title">Right now, my desk faces the Pacific.</h2>
+        <p class="plain" style="margin-top:22px">Three intersections shape my current work: economics, the environment, and technology.</p>
+        <p class="plain" style="margin-top:16px">In First Nations community and economic development, that means relationship-first, sovereignty-aware work in British Columbia &mdash; on the community's timeline, not mine.</p>
+        <p class="plain" style="margin-top:16px">In the seaweed sector, it means the <a href="https://seaweedcommons.com">Seaweed Commons (seaweedcommons.com)</a>: the knowledge, tools, and coordination infrastructure for everyone working in the sector. It covers sector intelligence, venture-building, and market coordination for Canada, with selected North American and global context where it informs practical decisions.</p>
+      </div>
+      <div class="now-term reveal" aria-hidden="true">
+        <span class="tline"><span class="tprompt">talplay:~$</span> now</span>
+        <span class="tline">&rarr; first nations &middot; british columbia</span>
+        <span class="tline">&rarr; seaweed commons</span>
+        <span class="tline">&nbsp;&nbsp;&middot; sector intelligence</span>
+        <span class="tline">&nbsp;&nbsp;&middot; venture-building</span>
+        <span class="tline">&nbsp;&nbsp;&middot; market coordination</span>
+        <span class="tline">status: active<span class="cursor" style="margin-left:6px"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMAINS -->
+  <section class="section section--ink" id="domains" aria-labelledby="domains-title">
+    <div class="inner">
+      <div class="reveal">
+        <div class="eyebrow">Where TalPlay works</div>
+        <h2 id="domains-title">Three domains.<br>One integrated practice.</h2>
+        <p class="lead" style="max-width:62ch">Each domain draws on the same core discipline: rigorous economic thinking, systems understanding, and the judgment to know what will actually work in context.</p>
+      </div>
+      <div class="domain-grid" aria-label="TalPlay practice domains">
+
+        <article class="domain domain--indigenous reveal">
+          <span class="domain-num">01</span>
+          <h3 class="domain-name">Indigenous<br>Community Development</h3>
+          <p class="domain-desc">TalPlay works alongside First Nations on the full architecture of community planning, not only economic strategy but the education, youth, cultural continuity, and governance dimensions that make economic development meaningful and sustainable over the long run.</p>
+          <ul class="domain-caps" aria-label="Indigenous community development capabilities">
+            <li>Comprehensive Community Plans (CCPs)</li>
+            <li>Economic self-determination strategy</li>
+            <li>Youth and education program design</li>
+            <li>Cultural continuity and heritage integration</li>
+            <li>Governance capacity and institutional design</li>
+            <li>Funding navigation and partnership strategy</li>
+          </ul>
+        </article>
+
+        <article class="domain domain--blue reveal">
+          <span class="domain-num">02</span>
+          <h3 class="domain-name">Seaweed<br>Sector</h3>
+          <p class="domain-desc">Canada's seaweed sector is entering a period of rapid change, but growth is held back by coordination gaps, fragmented information, and missing infrastructure. TalPlay works to remove those bottlenecks &mdash; building the digital tools, market intelligence, and coordination systems the sector needs to scale.</p>
+          <p class="domain-desc">Through the <a href="https://seaweedcommons.com">Seaweed Commons</a>, we focus on practical products that solve real problems:</p>
+          <ul class="domain-caps" aria-label="Seaweed sector capabilities">
+            <li>Sector intelligence platforms that map activity, connect actors, and inform decisions</li>
+            <li>Digital coordination infrastructure to align buyers, producers, and investors</li>
+            <li>Market and value-chain tools that reduce uncertainty and enable investment</li>
+            <li>Strategic products for decision-makers, from sector profiles to investment dossiers</li>
+          </ul>
+          <p class="domain-desc">This is applied work. It is not academic research. It is about creating things people in the sector can actually use.</p>
+        </article>
+
+        <article class="domain domain--global reveal">
+          <span class="domain-num">03</span>
+          <h3 class="domain-name">Economic Recovery<br>&amp; Regional Growth</h3>
+          <p class="domain-desc">Built on more than 25 years of work in fragile and complex economies, with UN agencies, governments, and development partners, this practice brings international-grade analytical rigour to regional growth challenges in Canada and globally.</p>
+          <ul class="domain-caps" aria-label="Economic recovery and regional growth capabilities">
+            <li>Post-conflict and fragile economy recovery strategy</li>
+            <li>Livelihoods and market systems programming</li>
+            <li>Regional economic development planning</li>
+            <li>Sector analysis and investment case development</li>
+            <li>Innovation and commercialization strategy</li>
+            <li>International development program design</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section section--quiet" id="work" aria-labelledby="work-title">
+    <div class="inner">
+      <div class="reveal">
+        <div class="eyebrow">What the work looks like</div>
+        <h2 id="work-title">Selected engagements.</h2>
+        <p class="lead">Recent work across the practice. Each a different client and context, the same discipline.</p>
+      </div>
+      <div class="work-list" aria-label="Selected TalPlay project engagements">
+
+        <article class="work-item reveal">
+          <div class="work-num">01</div>
+          <div>
+            <div class="work-sector work-sector--indigenous">Indigenous community development</div>
+            <h3 class="work-title">Comprehensive Community Development Plan</h3>
+            <p class="work-context">Halfway River First Nation's 2027 to 2031 Community Comprehensive Development Plan: the roadmap that will guide the Nation in developing and implementing projects across infrastructure, land and resource development, health services, family support and social development, housing, education, and youth.</p>
+          </div>
+          <div>
+            <span class="work-output-label">Engagement</span>
+            <ul class="work-outputs">
+              <li>Client: Halfway River First Nation</li>
+              <li>Region: Northern British Columbia</li>
+              <li>Plan period: 2027 to 2031</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-num">02</div>
+          <div>
+            <div class="work-sector work-sector--global">Socioeconomic &amp; digital skills</div>
+            <h3 class="work-title">Socioeconomic &amp; Digital Skills Training</h3>
+            <p class="work-context">A training program to build the socioeconomic and digital marketing skills of Iraqi nationals, with a training of trainers component for IOM staff who then deliver directly to beneficiaries across multiple locations in Iraq, including areas of return.</p>
+          </div>
+          <div>
+            <span class="work-output-label">Engagement</span>
+            <ul class="work-outputs">
+              <li>Client: International Organization for Migration (IOM)</li>
+              <li>Region: Iraq (West Asia)</li>
+              <li>Year: 2025</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-num">03</div>
+          <div>
+            <div class="work-sector work-sector--global">Youth &amp; capacity building</div>
+            <h3 class="work-title">Youth Internship Manual &amp; Organizational Capacity Building</h3>
+            <p class="work-context">A Youth Internship Manual to help local organizations run internship programs focused on sexual and reproductive health and rights, designed to create meaningful, engaging experiences that equip interns with real advocacy skills, knowledge, and tools.</p>
+          </div>
+          <div>
+            <span class="work-output-label">Engagement</span>
+            <ul class="work-outputs">
+              <li>Client: Oxfam</li>
+              <li>Region: West Asia &amp; North Africa</li>
+              <li>Year: 2022 to 2023</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-num">05</div>
+          <div>
+            <div class="work-sector work-sector--global">Evaluation &amp; data</div>
+            <h3 class="work-title">Evaluation: Open Data &amp; Gender-Responsive Budgeting</h3>
+            <p class="work-context">A final evaluation of a project enabling women, youth, and journalists to use data to advocate for gender responsive budgeting and public policy. The work covered the evaluation plan, a mixed methods data strategy, key informant interviews and focus groups, analysis, and the evaluation report.</p>
+          </div>
+          <div>
+            <span class="work-output-label">Engagement</span>
+            <ul class="work-outputs">
+              <li>Client: Internews</li>
+              <li>Region: Iraq (West Asia)</li>
+              <li>Year: 2021</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-num">06</div>
+          <div>
+            <div class="work-sector work-sector--global">Evaluation</div>
+            <h3 class="work-title">Evaluation: Peacebuilding &amp; Youth Empowerment</h3>
+            <p class="work-context">A multi-country evaluation of a UNESCO peacebuilding and innovation program across Jordan, Libya, Tunisia, and Morocco. The work covered evaluation design, mixed methods instruments, data collection and analysis, and a findings report presented to UNESCO in Paris and New York.</p>
+          </div>
+          <div>
+            <span class="work-output-label">Engagement</span>
+            <ul class="work-outputs">
+              <li>Client: UNESCO</li>
+              <li>Region: West Asia &amp; North Africa</li>
+              <li>Year: 2020 to 2021</li>
+            </ul>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDATION / TRACK RECORD + LEGACY PROJECTS -->
+  <section class="section section--paper" id="record" aria-labelledby="record-title">
+    <div class="inner">
+      <div class="record-grid">
+        <div class="reveal">
+          <div class="eyebrow">The foundation</div>
+          <h2 id="record-title">A quiet record in difficult contexts.</h2>
+          <p class="lead">The practice draws on more than 25 years across international development, Indigenous community planning, seaweed sector work, and applied economics, across ten countries and some of the most complex operating environments in the world.</p>
+
+          <div class="record-stats" style="margin-top:36px" aria-label="Key TalPlay statistics">
+            <div class="record-stat"><b>25+</b><span>Years of applied experience</span></div>
+            <div class="record-stat"><b>10+</b><span>Countries and complex contexts</span></div>
+            <div class="record-stat"><b>$36M+</b><span>In programs designed and delivered</span></div>
+            <div class="record-stat"><b>8</b><span>International agencies, incl. 2 UN</span></div>
+          </div>
+
+          <p class="client-logos-label">Selected partners &amp; clients</p>
+          <div class="logo-grid" aria-label="Selected client and partner organizations">
+            <div class="logo-item">Halfway River First Nation</div>
+            <div class="logo-item">IOM</div>
+            <div class="logo-item">UNESCO</div>
+            <div class="logo-item">Oxfam</div>
+            <div class="logo-item">Internews</div>
+            <div class="logo-item">Al-Quds University</div>
+          </div>
+
+          <p class="client-logos-label" style="margin-top:28px">Academic affiliation and collaboration</p>
+          <div class="logo-grid" aria-label="Academic affiliation and collaboration">
+            <div class="logo-item">Al-Quds University of Jerusalem</div>
+            <div class="logo-item">North Island College</div>
+            <div class="logo-item">Northern Lights College</div>
+            <div class="logo-item">Queen's University</div>
+            <div class="logo-item">Selkirk College</div>
+            <div class="logo-item">St. Lawrence College</div>
+            <div class="logo-item">University of Calgary</div>
+            <div class="logo-item">University of Waterloo</div>
+          </div>
+        </div>
+
+        <div class="record-detail-list reveal" aria-label="Regions and contexts">
+          <div class="record-detail-item">
+            <b>Canada</b>
+            <span>First Nations comprehensive community planning, and venture and commercialization work with universities and research institutions.</span>
+          </div>
+          <div class="record-detail-item">
+            <b>West Asia</b>
+            <span>Iraq, Yemen, Jordan, and Palestine: socioeconomic and digital skills, evaluations, youth programs, and social innovation.</span>
+          </div>
+          <div class="record-detail-item">
+            <b>North Africa</b>
+            <span>Libya, Tunisia, Morocco, and Sudan: peacebuilding, youth empowerment, and program evaluation.</span>
+          </div>
+          <div class="record-detail-item">
+            <b>East Africa</b>
+            <span>Kenya and the wider region: livelihoods, community development, and program design.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legacy projects: the programs behind the numbers -->
+      <div class="legacy-head reveal">
+        <div class="eyebrow">Selected earlier work</div>
+        <h2>The programs behind the numbers.</h2>
+        <p class="lead">Complex programs across digital learning, education, economic development, and humanitarian response. A few that still shape how the practice works.</p>
+      </div>
+      <div class="legacy-grid" aria-label="Selected earlier programs">
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Community learning</span>
+          <h3 class="legacy-name">Community-Based Learning &amp; Action Model</h3>
+          <p class="legacy-desc">Born from flipping a culture of waiting for handouts into one of local action. The model mobilized untapped human and social capital and put communities in the driver's seat, spreading from Palestine to Jordan, Lebanon, Yemen, and Morocco. Twenty years on it still runs, self reliant, with full community ownership.</p>
+          <p class="legacy-metric">20 years &middot; 100% community owned</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Digital learning</span>
+          <h3 class="legacy-name">Netketabi</h3>
+          <p class="legacy-desc">A national digital learning program built from nothing: original content, the systems to deliver it, and the digital skills young people need to become builders and problem solvers themselves. The point was never the technology. It was opening a pathway for a generation growing up in a fragile context.</p>
+          <p class="legacy-metric">$10M contract &middot; $500K raised</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Education systems</span>
+          <h3 class="legacy-name">Model School Networks</h3>
+          <p class="legacy-desc">A replicable model linking model schools to community learning and development centers, so that what a school learned, its community kept. Digital skills are not built only in a classroom. They are built in the community too.</p>
+          <p class="legacy-metric">Design &amp; technical lead</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Refugee education</span>
+          <h3 class="legacy-name">Remedial Education for Refugee Children</h3>
+          <p class="legacy-desc">Remedial learning for refugee children in host communities: meeting displaced children where their schooling was interrupted and building the footing they need to catch up and rejoin the classroom.</p>
+          <p class="legacy-metric">Host communities</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Local economic development</span>
+          <h3 class="legacy-name">Empowering Municipalities</h3>
+          <p class="legacy-desc">Local economic development built at the municipal level, putting the tools of economic growth in the hands of the level of government closest to the ground.</p>
+          <p class="legacy-metric">Municipal LED</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Livelihoods</span>
+          <h3 class="legacy-name">Micro-Finance for Youth Entrepreneurship</h3>
+          <p class="legacy-desc">A microfinance facility that paired lending with enterprise support, so youth led ventures and small businesses got the money and the capacity to use it. Either half on its own quietly disappoints everyone in it.</p>
+          <p class="legacy-metric">Small business &amp; youth</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Humanitarian</span>
+          <h3 class="legacy-name">Emergency &amp; Recovery Programs</h3>
+          <p class="legacy-desc">Emergency response run alongside long term development across seven programs at once. In a fragile setting, the crisis and the future refuse to take turns, so the programs cannot either.</p>
+          <p class="legacy-metric">Seven programs</p>
+        </article>
+        <article class="legacy-card reveal">
+          <span class="legacy-era">Higher education</span>
+          <h3 class="legacy-name">Innovation Curriculum Suite</h3>
+          <p class="legacy-desc">Four university courses on creativity, design thinking, innovation leadership, and financing for innovation. Teaching innovation is a useful discipline for anyone who advises on it.</p>
+          <p class="legacy-metric">4 courses designed</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS & FIELD NOTES -->
+  <section class="section section--paper" id="insights" aria-labelledby="insights-title">
+    <div class="inner">
+      <div class="reveal">
+        <div class="eyebrow">Thinking on the record</div>
+        <h2 id="insights-title">The advice I find myself giving over coffee.</h2>
+        <p class="lead">Short notes from the work. People come to TalPlay for delivery, but they come back for the thinking, so here is some of it, free. If one of these starts an argument, <a href="#contact">write to me</a>. That's what it's for.</p>
+      </div>
+      <div class="insights-list" aria-label="TalPlay insights and field notes">
+
+        <article class="insight-item reveal">
+          <div class="insight-type">Sector Note</div>
+          <div>
+            <span class="insight-title">Comprehensive Community Planning for First Nations: what works, what doesn't, and what planners rarely say out loud</span>
+            <p class="insight-desc">After working through multiple CCP processes, a frank assessment of where community planning succeeds and where it quietly fails, and what Nations and planners need to do differently to make these documents matter.</p>
+          </div>
+        </article>
+
+        <article class="insight-item reveal">
+          <div class="insight-type">Market Analysis</div>
+          <div>
+            <span class="insight-title">The Seaweed Opportunity in Canada: what the evidence actually says</span>
+            <p class="insight-desc">An honest look at the commercial potential of Canada's seaweed sector, separating real market signals from institutional enthusiasm. A new sector is a market system being born, and it holds because the connections hold, not because of the excitement around it.</p>
+          </div>
+        </article>
+
+        <article class="insight-item reveal">
+          <div class="insight-type">Field Note</div>
+          <div>
+            <span class="insight-title">The money is rarely the missing piece</span>
+            <p class="insight-desc">Every few years someone looks at a struggling local economy and concludes it needs capital. Usually the loans that work sit inside a system that already works. Capital dropped into a broken system doesn't fix the system. It gives the failure a budget. Trace one transaction end to end, fix where it dies, then fund it.</p>
+          </div>
+        </article>
+
+        <article class="insight-item reveal">
+          <div class="insight-type">Field Note</div>
+          <div>
+            <span class="insight-title">The certificate is not the finish line</span>
+            <p class="insight-desc">Most youth employment programs end on the wrong day: graduation day. The hard part was never the training. It's the first paying customer, the first contract, the first month of doing the thing for real with rent due. Design backwards from that first transaction, and build the program to remove what stands in the way of it.</p>
+          </div>
+        </article>
+
+        <article class="insight-item reveal">
+          <div class="insight-type">Essay</div>
+          <div>
+            <span class="insight-title">After the Report: why economic strategy fails at implementation, and how to design against it</span>
+            <p class="insight-desc">Most strategy work ends with a document. The interesting question is what happens after, and why the choices made during strategy design determine whether implementation succeeds or quietly stalls on a shelf.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section section--ink" id="approach" aria-labelledby="approach-title">
+    <div class="inner">
+      <div class="approach-intro reveal">
+        <div>
+          <div class="eyebrow">How TalPlay thinks</div>
+          <h2 id="approach-title">Economies are built through systems, trust, and timing.</h2>
+        </div>
+        <p class="plain" style="margin-top:8px">A strategy is only useful if it can hold up in the real world: in budget meetings, community conversations, investor diligence, and the uneven conditions where change actually happens. TalPlay is built for the gap between the plan and the outcome.</p>
+      </div>
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="num">01</span>
+          <h3>Start with the operating reality.</h3>
+          <p class="plain">Before recommending a path, TalPlay studies the institutions, incentives, market signals, histories, and constraints already shaping the system, not the system someone wishes existed.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="num">02</span>
+          <h3>Make the choices explicit.</h3>
+          <p class="plain">The work turns ambiguity into decisions: what to build, what to pause, what to test, who must be involved, and what evidence is still missing.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="num">03</span>
+          <h3>Design for use after the report.</h3>
+          <p class="plain">Outputs are built to be acted on by boards, councils, funders, and project teams long after the engagement ends, not filed away after the presentation.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="num">04</span>
+          <h3>Respect the relationship that makes work possible.</h3>
+          <p class="plain">In Indigenous communities, fragile economies, and emerging sectors alike, trust is the infrastructure. TalPlay approaches every engagement with the patience that trust requires.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / WRITE TO ME -->
+  <section class="section section--paper write-section" id="contact" aria-labelledby="contact-title">
+    <span class="scroll-anchor" id="write" aria-hidden="true"></span>
+    <div class="inner">
+      <div class="write-grid">
+        <div class="write-intro reveal">
+          <h2 id="contact-title">Bring me the messy version.</h2>
+          <p>You don't need a polished brief. If you're a First Nation weighing a community or economic plan; if you're a UN team or an NGO and a program isn't landing; if you're building in the seaweed sector and the map is still blank; if you need a curriculum designed or an evaluation done, write to me and tell me where it hurts.</p>
+          <p>Not a project yet, just a question? That's fine too. Some of my best work started as someone asking for advice.</p>
+          <p>I can help you build digital products, integrate advanced technology like AI responsibly into your operations, and design programs for post-secondary institutions that work for the communities they serve.</p>
+          <p>Here's the promise: work with me today, and within a reasonable timeline, you could have programs you have never had before, built on your context, made with your community, and creating the ground for a better tomorrow for the generations that follow.</p>
+        </div>
+        <div class="reveal">
+          <form class="write-form" id="write-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New enquiry from talplay.ca">
+            <div class="write-field">
+              <label for="wf-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="wf-name" name="name" required autocomplete="name" placeholder="Your name">
+              <p class="write-field__error" id="wf-name-error" hidden></p>
+            </div>
+            <div class="write-field">
+              <label for="wf-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="wf-email" name="email" required autocomplete="email" placeholder="you@organisation.ca">
+              <p class="write-field__error" id="wf-email-error" hidden></p>
+            </div>
+            <div class="write-field">
+              <label for="wf-organisation">Organisation or Nation <span class="opt">(optional)</span></label>
+              <input type="text" id="wf-organisation" name="organisation" autocomplete="organization" placeholder="Community, company, agency, or university">
+            </div>
+            <div class="write-field">
+              <label for="wf-message">Where does it hurt? <span aria-hidden="true">*</span></label>
+              <textarea id="wf-message" name="message" required placeholder="The rough version is fine - messy is welcome."></textarea>
+              <p class="write-field__error" id="wf-message-error" hidden></p>
+            </div>
+            <button type="submit" class="write-submit">Send message</button>
+            <p class="write-status" id="write-status" role="status" aria-live="polite"></p>
+            <p class="write-foot">Your details are used only to reply to this message. No mailing lists, no sharing.</p>
+          </form>
+          <div class="write-success" id="write-success" hidden>
+            <span class="ok" aria-hidden="true">&#10003;</span>
+            <h3>Thank you!</h3>
+            <p>I'll be in touch soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>TalPlay Inc.</span>
+  <span>Strategy &amp; applied economics &middot; Canada</span>
+  <span><a href="mailto:naser@talplay.ca">naser@talplay.ca</a></span>
+  <span><a href="https://substack.com/@naserarda" target="_blank" rel="noopener noreferrer">Read on Substack</a></span>
+</footer>
+
+
+<script>
+(function() {
+  // Terminal status ticker
+  const status = document.getElementById("status");
+  const lines = [
+    "reading the economic system",
+    "mapping First Nations development pathways",
+    "testing the seaweed market signal",
+    "sequencing regional investment logic",
+    "turning evidence into decisions",
+    "building strategy that survives reality"
+  ];
+  let i = 0;
+  setInterval(function() {
+    i = (i + 1) % lines.length;
+    status.textContent = lines[i];
+  }, 2800);
+})();
+
+(function() {
+  // Scroll reveal
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(el) { el.classList.add("in"); });
+    return;
+  }
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .14 });
+  items.forEach(function(el) { observer.observe(el); });
+})();
+
+(function() {
+  // Hero systems map canvas
+  const canvas = document.getElementById("systems-map");
+  if (!canvas) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const ctx = canvas.getContext("2d");
+
+  const points = [
+    { x: .16, y: .22, r: 4,   c: "#A85F38" },
+    { x: .39, y: .18, r: 3,   c: "#ECEEE8" },
+    { x: .72, y: .31, r: 5,   c: "#6E9BB0" },
+    { x: .58, y: .52, r: 3,   c: "#ECEEE8" },
+    { x: .28, y: .68, r: 5,   c: "#6E9BB0" },
+    { x: .78, y: .76, r: 4,   c: "#C58A2E" },
+    { x: .45, y: .84, r: 3,   c: "#ECEEE8" }
+  ];
+  const links = [[0,1],[1,2],[2,3],[3,4],[3,5],[4,6],[1,3],[0,4]];
+  const linkColors = [
+    "rgba(168,95,56,.42)",
+    "rgba(197,138,46,.34)",
+    "rgba(110,155,176,.44)",
+    "rgba(236,238,232,.2)",
+    "rgba(110,155,176,.32)",
+    "rgba(197,138,46,.38)",
+    "rgba(236,238,232,.18)",
+    "rgba(168,95,56,.3)"
+  ];
+  let frame = 0;
+
+  function draw() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width  = Math.max(1, Math.floor(rect.width  * dpr));
+    canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, rect.width, rect.height);
+    ctx.lineWidth = 1;
+
+    links.forEach(function(link, i) {
+      const a = points[link[0]], b = points[link[1]];
+      const ax = a.x * rect.width,  ay = a.y * rect.height;
+      const bx = b.x * rect.width,  by = b.y * rect.height;
+      ctx.strokeStyle = linkColors[i];
+      ctx.beginPath();
+      ctx.moveTo(ax, ay);
+      ctx.bezierCurveTo(ax + 36, ay - 22, bx - 42, by + 28, bx, by);
+      ctx.stroke();
+    });
+
+    points.forEach(function(pt, i) {
+      const pulse = reduce ? 0 : Math.sin(frame / 38 + i) * 1.8;
+      ctx.beginPath();
+      ctx.fillStyle = pt.c;
+      ctx.arc(pt.x * rect.width, pt.y * rect.height, pt.r + pulse, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(236,238,232,.14)";
+      ctx.arc(pt.x * rect.width, pt.y * rect.height, pt.r + 12 + pulse, 0, Math.PI * 2);
+      ctx.stroke();
+    });
+
+    if (!reduce) {
+      frame++;
+      requestAnimationFrame(draw);
+    }
+  }
+
+  draw();
+  if (reduce) window.addEventListener("resize", draw);
+})();
+(function() {
+  // Mobile nav toggle (accessible)
+  var header = document.getElementById("site-header");
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.getElementById("primary-nav");
+  if (!toggle || !nav) return;
+  function closeMenu() {
+    header.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+  }
+  toggle.addEventListener("click", function() {
+    var open = header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  nav.addEventListener("click", function(e) {
+    if (e.target.tagName === "A") closeMenu();
+  });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeMenu();
+  });
+})();
+
+
+(function() {
+  // Write to me form (scroll to #write is native anchor + CSS smooth scroll)
+  var form = document.getElementById("write-form");
+  if (!form) return;
+  var status = document.getElementById("write-status");
+  var success = document.getElementById("write-success");
+
+  function setError(id, msg) {
+    var input = document.getElementById(id);
+    var err = document.getElementById(id + "-error");
+    if (!input || !err) return;
+    if (msg) {
+      input.setAttribute("aria-invalid", "true");
+      input.classList.add("is-error");
+      err.textContent = msg;
+      err.hidden = false;
+    } else {
+      input.removeAttribute("aria-invalid");
+      input.classList.remove("is-error");
+      err.textContent = "";
+      err.hidden = true;
+    }
+  }
+
+  function checkField(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (id === "wf-name") {
+      setError(id, el.value.trim() ? "" : "Please enter your name.");
+    } else if (id === "wf-email") {
+      setError(id, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim()) ? "" : "Please enter a valid email address.");
+    } else if (id === "wf-message") {
+      setError(id, el.value.trim().length >= 10 ? "" : "Please tell me a little more (10+ characters).");
+    }
+  }
+
+  function validateAll() {
+    var ok = true;
+    ["wf-name", "wf-email", "wf-message"].forEach(function(id) {
+      checkField(id);
+      if (!document.getElementById(id + "-error").hidden) ok = false;
+    });
+    return ok;
+  }
+
+  ["wf-name", "wf-email", "wf-message"].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("blur", function() { checkField(id); });
+  });
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    status.textContent = "";
+    if (!validateAll()) return;
+    var btn = form.querySelector("button[type=submit]");
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    }).then(function(res) {
+      if (!res.ok) throw new Error("bad response");
+      return res.json();
+    }).then(function() {
+      form.hidden = true;
+      success.hidden = false;
+    }).catch(function() {
+      status.textContent = "Something went wrong. Please email me directly at naser@talplay.ca.";
+      btn.disabled = false;
+      btn.textContent = "Send message";
+    });
+  });
+})();
+</script>
+</body>
+</html>
