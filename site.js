@@ -5,7 +5,6 @@
   const lines = [
     "reading the economic system",
     "mapping First Nations development pathways",
-    "sourcing and dating seaweed prices",
     "sequencing regional investment logic",
     "keeping a community plan in use",
     "turning evidence into decisions",

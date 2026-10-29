@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/seaweed", "destination": "/", "permanent": false },
+    { "source": "/seaweed/", "destination": "/", "permanent": false }
+  ]
+}
